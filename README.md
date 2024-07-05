@@ -13,6 +13,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [ ] Style subission page
 - [ ] Style View Answers page
 
+## Running the app
+- Clone the github repo
+- In the src/ folder, run npm i
+- npm run dev
+
 ## Getting Started
 
 First, run the development server:
