@@ -4,8 +4,15 @@ import styles from "../page.module.css";
 import { useEffect, useState } from "react";
 
 export default function Page() {
-    const [answers, setAnswers] = useState([{}]);
+    const [answers, setAnswers] = useState([]);
     const [errorMessage, setError] = useState('');
+
+    interface answerEntry {
+      id: string,
+      entry: string,
+      created_at: string,
+      modified_at: string
+    }
  
     useEffect(() => {
         const interval = setInterval(fetchData, 5000);
@@ -23,12 +30,10 @@ export default function Page() {
             response.json()
         )
         .then((data) => {
-            console.log(data[1])
             data.map((item: any) => {
                 const date = new Date(item.created_at);
                 item.created_at = date.toLocaleString('en-US');
             });
-            console.log(data[1])
             setAnswers(data);
         })
         .catch((error) => {
@@ -37,7 +42,7 @@ export default function Page() {
         })
     }
 
-    const answersTable = answers.map((answer, index) => {
+    const answersTable = answers.map((answer: answerEntry, index) => {
         return (
             <tr key={index}>
                 <td>{answer.id}</td>
