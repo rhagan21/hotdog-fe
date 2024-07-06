@@ -5,17 +5,18 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [x] Make Submission page
 - [x] Make View Answers page
 - [x] Form validation - No empty answer, no "yes", "no", "I don't know", "That's fine"
-- [ ] Make submission work and show success message
-- [ ] Make View Answers work - last 100 answers
-- [ ] Make View Answers use polling
+- [x] Make submission work and show success message
+- [x] Make View Answers work
+- [x] Limit answers to last 100 answers
+- [x] Make View Answers use polling
 - [ ] Update this readmes
-- [ ] Form validation improvement - OnBlur works with click out but misses keyout
+- [x] Form validation improvement - OnBlur works with click out but misses keyout
 - [ ] Style subission page
 - [ ] Style View Answers page
 
 ## Running the app
 - Clone the github repo
-- In the src/ folder, run npm i
+- The first time, n the src/ folder, run npm i
 - npm run dev
 
 ## Getting Started
