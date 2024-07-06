@@ -43,6 +43,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
   max-width: 100%;
+  padding-top: 10px;
   width: var(--max-width);
 }
 

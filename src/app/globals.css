@@ -105,3 +105,52 @@ a {
     color-scheme: dark;
   }
 }
+
+div.messageContainer {
+  padding: 20x;
+  min-height: 20px;
+}
+
+p.error {
+  color: red;
+}
+
+p.success {
+  color: green;
+}
+
+h1 {
+  padding-bottom: 30px;
+}
+
+h3 {
+  padding-bottom: 10px;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid gray;
+}
+
+tr {
+  border-bottom: 1px solid gray
+}
+
+tr th:nth-child(1) {
+  width: 5%;
+}
+
+tr th:nth-child(2) {
+  width: 60%;
+}
+
+tr th:nth-child(3) {
+  width: 25%;
+}
+
+th,
+td {
+  padding: 5px;
+}

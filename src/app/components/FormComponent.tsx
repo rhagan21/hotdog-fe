@@ -56,9 +56,9 @@ const FormComponent = () => {
     }
 
     return (
-        <form>
+        <form >
             <div>
-                <label>Is a hotdog a sandwich?</label>
+                <label>Is a hotdog a sandwich? </label>
                 <input 
                     type="text" 
                     id="answer"
@@ -66,14 +66,18 @@ const FormComponent = () => {
                     required
                     onChange={(e) => validateInput(e.target.value)}
                 />
-                {errorMessage && <p style={{color: 'red'}}>{errorMessage}</p>}
+                <div className="messageContainer">
+                    {errorMessage && <p className="error">{errorMessage}</p>}
+                </div>
             </div>
             <button 
                 type="submit"
                 onClick={handleSubmit}
                 disabled={errorMessage.length > 0}
             >Submit</button>
-            {successMessage && <p style={{color: 'green'}}>{successMessage}</p>}
+            <div className="messageContainer">
+                {successMessage && <p className="success">{successMessage}</p>}
+            </div>
         </form>
     );
 }

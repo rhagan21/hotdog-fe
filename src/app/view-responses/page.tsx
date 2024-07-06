@@ -19,8 +19,16 @@ export default function Page() {
 
     const fetchData = async () => {
         fetch('http://localhost:3000/api/answers')
-        .then((response) => response.json())
+        .then((response) => 
+            response.json()
+        )
         .then((data) => {
+            console.log(data[1])
+            data.map((item: any) => {
+                const date = new Date(item.created_at);
+                item.created_at = date.toLocaleString('en-US');
+            });
+            console.log(data[1])
             setAnswers(data);
         })
         .catch((error) => {
@@ -42,7 +50,7 @@ export default function Page() {
     return <main className={styles.main}>
         <div>
             <h1>View Responses page</h1>
-            <p> The people have spoken: </p>
+            <h3> The people have spoken: </h3>
             <table>
                 <tbody>
                     <tr>
