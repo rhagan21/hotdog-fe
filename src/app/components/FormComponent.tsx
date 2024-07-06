@@ -58,7 +58,7 @@ const FormComponent = () => {
     return (
         <form >
             <div>
-                <label>Is a hotdog a sandwich? </label>
+                <label>Is a hotdog a sandwich? Why or why not? </label>
                 <input 
                     type="text" 
                     id="answer"
