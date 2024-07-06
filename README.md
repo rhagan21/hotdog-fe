@@ -11,7 +11,7 @@ This is a sample app that asks a question and sends it to a locally running API,
 - [x] Make View Answers work
 - [x] Limit answers to last 100 answers
 - [x] Make View Answers use polling
-- [ ] Update this readmes
+- [x] Update this readmes
 - [x] Form validation improvement - OnBlur works with click out but misses keyout
 - [x] Style subission page
 - [x] Style View Answers page
