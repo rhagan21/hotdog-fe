@@ -1,6 +1,6 @@
 # Hotdog question app
 
-This is a sample app using NextJS/React for the frontend.
+This is a sample app that asks a question and sends it to a locally running API, and can poll for previous answers and display them in a table. It was built using NextJS/React for the frontend.
 
 ## Todos
 - [x] Make front page with links to sub pages
