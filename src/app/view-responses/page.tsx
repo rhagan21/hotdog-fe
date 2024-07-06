@@ -25,7 +25,7 @@ export default function Page() {
       
 
     const fetchData = async () => {
-        fetch('http://localhost:3000/api/answers')
+        fetch('https://hotdog-vjxo82txo-rhagan21s-projects.vercel.app/api/answers')
         .then((response) => 
             response.json()
         )

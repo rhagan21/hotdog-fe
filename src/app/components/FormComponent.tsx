@@ -9,7 +9,7 @@ const FormComponent = () => {
 
     const addAnswer = async (answer: string) => {
         try {
-            const response = await fetch('http://localhost:3000/api/answers', {
+            const response = await fetch('https://hotdog-vjxo82txo-rhagan21s-projects.vercel.app/api/answers', {
                 method: 'POST',
                 body: JSON.stringify({
                     "answer": {

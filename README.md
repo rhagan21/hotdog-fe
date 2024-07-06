@@ -16,8 +16,10 @@ This is a sample app that asks a question and sends it to a locally running API,
 - [x] Style subission page
 - [x] Style View Answers page
 
-## Running the app
+## Running the app locally
 - Clone the github repo for the frontend
+- Change the URLs in the fetch calls to use `http://localhost:3000` instead of `https://hotdog-vjxo82txo-rhagan21s-projects.vercel.app`
 - The first time, cd into the the project, run `npm i` to install dependencies
+- Run the backend at `localhost:3000` (the default)
 - Run `npm run dev` to run the frontend
 - The frontend will deploy to `http://localhost:3001`
