@@ -16,12 +16,11 @@ export default function Home() {
         />
       </div>
 
+
       <div className={styles.grid}>
         <a
           href="/form"
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2>
             Submit your answer <span>-&gt;</span>
@@ -32,8 +31,6 @@ export default function Home() {
         <a
           href="/view-responses"
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2>
             View Responses <span>-&gt;</span>
