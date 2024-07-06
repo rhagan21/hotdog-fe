@@ -37,7 +37,7 @@ const FormComponent = () => {
     };
     
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e :any) => {
         e.preventDefault();
         addAnswer(answer)
     }
@@ -64,7 +64,7 @@ const FormComponent = () => {
                     id="answer"
                     name="answer" 
                     required
-                    onChange={(e) => validateInput(e.target.value)}
+                    onChange={(e: any) => validateInput(e.target.value)}
                 />
                 <div className="messageContainer">
                     {errorMessage && <p className="error">{errorMessage}</p>}
