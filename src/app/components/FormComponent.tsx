@@ -5,27 +5,53 @@ import { useEffect, useState } from "react";
 const FormComponent = () => {
     const [errorMessage, setError] = useState('');
     const [successMessage, setSuccess] = useState('');
+    const [answer, setAnswer] = useState('');
 
-    const handleSubmit = () => {
-        console.log("handlesubmit")
-        if (errorMessage.length > 0) {
-            console.log("Valid form");
-            // do submission here
-            setSuccess("Successfully submitted");
-        } else {
-            console.log("Invalid form");
+    const addAnswer = async (answer: string) => {
+        try {
+            const response = await fetch('http://localhost:3000/api/answers', {
+                method: 'POST',
+                body: JSON.stringify({
+                    "answer": {
+                        "entry": answer
+                    }    
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                },
+            });
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                setError(errorData.error);
+                throw new Error(errorData.error);
+            }
+    
+            const data = await response.json();
+            setSuccess("Successfully submitted!");
+            return true;
+        } catch (error) {
+            setError(error.message);
+            return false;
         }
+    };
+    
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addAnswer(answer)
     }
 
-    const validateInput = (e: any) => {
+    const validateInput = (answer: string) => {
+        setSuccess('');
+        setAnswer(answer);
         let invalidList = ["yes", "no", "i don't know", "idk", "i dont know", "that's fine", "thats fine"];
-        if (invalidList.includes(e.target.value.toLowerCase())) {
+        if (invalidList.includes(answer.toLowerCase())) {
             setError("Invalid value");
-        } else if (e.target.value.length < 1) {
+        } else if (answer.length < 1) {
             setError("Please enter a value");
         } else {
             setError('');
-            console.log("Valid value");
         }
     }
 
@@ -38,16 +64,16 @@ const FormComponent = () => {
                     id="answer"
                     name="answer" 
                     required
-                    onBlur={validateInput}
+                    onChange={(e) => validateInput(e.target.value)}
                 />
                 {errorMessage && <p style={{color: 'red'}}>{errorMessage}</p>}
             </div>
             <button 
                 type="submit"
                 onClick={handleSubmit}
-                disabled={!!errorMessage}
+                disabled={errorMessage.length > 0}
             >Submit</button>
-            {successMessage && <p>{successMessage}</p>}
+            {successMessage && <p style={{color: 'green'}}>{successMessage}</p>}
         </form>
     );
 }
