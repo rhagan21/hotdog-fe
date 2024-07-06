@@ -30,7 +30,7 @@ const FormComponent = () => {
             const data = await response.json();
             setSuccess("Successfully submitted!");
             return true;
-        } catch (error) {
+        } catch (error: any) {
             setError(error.message);
             return false;
         }
